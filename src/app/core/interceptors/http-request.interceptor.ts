@@ -42,7 +42,10 @@ export class HttpsRequestInterceptor implements HttpInterceptor {
             // fazer login de novo
             this.msgService.showMessageInfo('Credenciais inválidas...')
             this.authService.logout();
-          } else {
+          } else if (err.status === 400 && err.message.includes('/challenge-phael/api/oauth/token')){
+            this.msgService.showMessageInfo('Credenciais inválidas! Por favor, verifique as informações.')
+          }
+          else {
             console.log(err);
             this.msgService.showMessageError(`Erro inesperado: ${err.status} - ${err.message}`)
           }

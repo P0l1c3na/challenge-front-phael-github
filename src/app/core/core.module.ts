@@ -6,18 +6,23 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
 import {MatTooltipModule} from "@angular/material/tooltip";
 import {RouterModule} from "@angular/router";
+import {ProgressLoaderComponent} from "./layout/progress-loader/progress-loader.component";
+import {MatProgressBarModule} from "@angular/material/progress-bar";
 
 
 
 @NgModule({
   declarations: [
-    HeaderComponent
+    HeaderComponent,
+    ProgressLoaderComponent
   ],
   exports: [
-    HeaderComponent
+    HeaderComponent,
+    ProgressLoaderComponent
   ],
   schemas: [
-    HeaderComponent
+    HeaderComponent,
+    ProgressLoaderComponent
   ],
   imports: [
     CommonModule,
@@ -25,7 +30,8 @@ import {RouterModule} from "@angular/router";
     MatIconModule,
     MatButtonModule,
     MatTooltipModule,
-    RouterModule
+    RouterModule,
+    MatProgressBarModule
   ]
 })
 export class CoreModule { }

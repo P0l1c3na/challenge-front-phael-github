@@ -75,11 +75,10 @@ podendo executar os quatro principais verbos (GET,POST,PUT,DELETE) no servidor, 
 Com mais de 143.000 downloads semanais, é uma ótima alternativa ao IndexedDB indicado para a utilização neste projeto para avaliação de conhecimento
 de desenvolvimento web.
 
-#### _Execução do Projeto em ambiente de desenvolvimento:_
+#### _Execução do Projeto em ambiente de desenvolvimento e Produção:_
 * Ao baixar o projeto executar o comando npm install.
-* Instalar o Json-Server via comando: npm install -g json-server.
-* Executar na mesma pasta do projeto o comando: json-server --watch db.json, para que o Json-Server 
-expor o endpoint de usuarios na porta 3000 (http://localhost:3000/usuarios), configurada por padrão pelo servidor. 
-* Após o Json-Server estiver em execução é necessário executar o comando ng serve e acessar o link http://localhost:4200/login.
-* Caso seja necessário excluir todos os dados de usuários cadastrados no sistema é necessário apenas abrir o arquivo db.json e 
-deletar os dados contidos na tag usuarios: [] do arquivo json. 
+* Se o projeto for executado em produção a url aponta para o serviço hospedado no Heroku.
+* Se for executado em modo de desenvolvimento é necessário ter a API rodando em localhost:8080/challenge-phael/api/.
+* Este projeto se encontra executando em modo de produção no link [https://5f24f6fd0b211928c400acae--brave-elion-dacfce.netlify.app/](https://5f24f6fd0b211928c400acae--brave-elion-dacfce.netlify.app/).
+* O projeto foi hospedado numa plataforma que dispõe de recursos grátis pra desenvolvedores, chamada [Netlify](https://www.netlify.com/).
+* A documentação da API se encontra em [https://challenge-back-phael.herokuapp.com/challenge-phael/api/swagger-ui.html#/](https://challenge-back-phael.herokuapp.com/challenge-phael/api/swagger-ui.html#/).
