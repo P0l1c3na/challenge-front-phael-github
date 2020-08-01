@@ -1,0 +1,22 @@
+<app-header></app-header>
+<h1>
+  Manutenção de Usuário
+</h1>
+<div class="info-usuario-container">
+  <mat-accordion>
+    <mat-expansion-panel expanded="true">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Informações de cadastro
+        </mat-panel-title>
+        <mat-panel-description>
+          Visualização e edição de informações cadastradas no sistema.
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <app-info-usuario></app-info-usuario>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
+<div class="info-usuario-container" *ngIf="mostrarManutencaoAdmin">
+  <app-manutencao-usuario-admin [isModoRelatorio]="false"></app-manutencao-usuario-admin>
+</div>

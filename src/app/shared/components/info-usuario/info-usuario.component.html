@@ -1,0 +1,58 @@
+<form [formGroup]="form" class="form-container-info-usuario">
+  <div class="container-info-usuario">
+    <mat-form-field class="form-field-info">
+      <mat-label>Nome</mat-label>
+      <input matInput formControlName="nome" required>
+    </mat-form-field>
+
+    <mat-form-field class="form-field-info">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email">
+    </mat-form-field>
+
+    <mat-form-field class="form-field-info" required>
+      <mat-label>Pefil</mat-label>
+      <mat-select formControlName="perfil">
+        <mat-option [value]=1>
+          ADMINISTRADOR
+        </mat-option>
+        <mat-option [value]=2>
+          VISITANTE
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="form-field-info">
+      <mat-label>Telefone</mat-label>
+      <input matInput formControlName="telefone" type="number" maxlength="10">
+    </mat-form-field>
+  </div>
+  <div class="container-info-usuario">
+    <mat-form-field class="form-field-info">
+      <mat-label>CEP</mat-label>
+      <input matInput formControlName="cep" type="number" size="8">
+    </mat-form-field>
+
+    <mat-form-field class="form-field-info">
+      <mat-label>Endereço</mat-label>
+      <input matInput formControlName="endereco">
+    </mat-form-field>
+
+    <mat-form-field class="form-field-info">
+      <mat-label>Senha</mat-label>
+      <input matInput formControlName="senha" type="password" maxlength="16" required>
+    </mat-form-field>
+
+    <p class="form-field-info">
+      <mat-checkbox color="primary" formControlName="ativo">Ativo</mat-checkbox>
+    </p>
+  </div>
+</form>
+<div class="center-button">
+  <button *ngIf="!salvando; else salvandoSpinner;" style="width: 100%" mat-raised-button color="primary" [disabled]="form.invalid" (click)="salvar()">
+    Salvar Infomrações
+  </button>
+  <ng-template #salvandoSpinner>
+    <mat-spinner [diameter]="20"></mat-spinner>
+  </ng-template>
+</div>

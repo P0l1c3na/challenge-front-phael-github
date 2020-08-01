@@ -1,0 +1,28 @@
+<mat-card class="card-login">
+  <mat-card-header>
+    <mat-card-title>Login</mat-card-title>
+    <mat-card-subtitle>Insira suas informações</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <form class="form-container" [formGroup]="form">
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Digite o email" formControlName="email">
+        <mat-icon matSuffix>email</mat-icon>
+      </mat-form-field >
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Senha</mat-label>
+        <input [type]="isActive ? 'text' : 'password'" matInput placeholder="Digite a senha" formControlName="senha">
+        <button matSuffix mat-icon-button (click)="showPassword()">
+          <mat-icon *ngIf="!isActive">visibility</mat-icon>
+          <mat-icon *ngIf="isActive">visibility_off</mat-icon>
+        </button>
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+  <mat-card-actions class="actions-login">
+    <button mat-button style="max-width: 40%; margin-left: 20px" (click)="aindaNaoSouUsuario()">Ainda não sou usuário</button>
+    <div style="flex: 1"></div>
+    <button mat-raised-button color="primary" style="max-width: 25%; margin-right: 20px; width: 350px" [disabled]="form.invalid" (click)="login()">Acessar</button>
+  </mat-card-actions>
+</mat-card>

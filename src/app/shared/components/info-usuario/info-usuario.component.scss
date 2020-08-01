@@ -1,0 +1,24 @@
+.form-container-info-usuario{
+  flex-direction: row;
+  display: flex;
+  justify-content: space-between;
+  align-content: space-between;
+}
+
+.container-info-usuario {
+  min-width: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-content: space-between;
+  flex-direction: column;
+}
+.form-field-info{
+  max-width: 50%;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.center-button{
+  display: flex;
+  justify-content: center;
+}

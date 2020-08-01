@@ -1,0 +1,22 @@
+<app-header></app-header>
+<h1>
+  Relatório
+</h1>
+<div class="container-relatorio">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Quantidade de usuários</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>Quantidade total de Usuários: {{qtdTotalDeUsuarios}}</p>
+      <p *ngIf="qtdUsuariosFiltrados !== ''">Quantidade de usuários {{qtdUsuariosFiltrados}}</p>
+    </mat-card-content>
+  </mat-card>
+</div>
+<div class="container-relatorio">
+  <app-manutencao-usuario-admin
+    [isModoRelatorio]="true"
+    (qtdTotalUsers)="onUsuariosTotal($event)"
+    (qtdUsuariosFiltrados)="onUsuariosFiltrado($event)"
+  ></app-manutencao-usuario-admin>
+</div>

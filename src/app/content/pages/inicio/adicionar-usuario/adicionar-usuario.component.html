@@ -1,0 +1,34 @@
+<div>
+  <h2>Ainda não sou usuário</h2>
+</div>
+<form class="form-container" [formGroup]="form">
+  <mat-form-field appearance="outline" class="form-field">
+    <mat-label>Nome</mat-label>
+    <input matInput placeholder="Nome completo" formControlName="nome" required>
+    <mat-icon matSuffix>person_outline</mat-icon>
+  </mat-form-field >
+  <mat-form-field appearance="outline" class="form-field">
+    <mat-label>Email</mat-label>
+    <input matInput placeholder="Digite o email" formControlName="email" required>
+    <mat-icon matSuffix>email</mat-icon>
+    <mat-error *ngIf="form.errors?.email">O email não tem um formato válido!</mat-error>
+  </mat-form-field >
+  <mat-form-field appearance="outline" class="form-field">
+    <mat-label>Senha</mat-label>
+    <input type="password" matInput placeholder="Digite uma senha" formControlName="senha" required>
+    <mat-icon matSuffix>vpn_key</mat-icon>
+  </mat-form-field >
+  <mat-form-field appearance="outline" class="form-field">
+    <mat-label>Confirmar Senha</mat-label>
+    <input  type="password" matInput placeholder="Confirme sua senha" formControlName="confirmarSenha" required>
+    <mat-icon matSuffix>vpn_key</mat-icon>
+    <mat-error *ngIf="isInvalid">As senhas informadas não são iguais!</mat-error>
+  </mat-form-field >
+  <div class="actions-cadastro">
+    <button mat-dialog-close mat-raised-button color="warn" style="max-width: 25%; margin-left: 20px; width: 350px" >Fechar</button>
+  <div style="flex: 1"></div>
+  <button mat-raised-button color="primary" class="buton-salvar" #btnSalvar
+          (click)="salvar()" [disabled]="form.invalid || this.isInvalid">Salvar
+  </button>
+  </div>
+</form>

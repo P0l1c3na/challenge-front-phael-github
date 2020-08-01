@@ -1,0 +1,23 @@
+.info-usuario-container{
+  margin-top: 2%;
+  display: flex;
+  justify-content: center;
+}
+
+.info-container{
+  flex-direction: column;
+}
+
+mat-accordion{
+  min-width: 80%;
+}
+
+app-manutencao-usuario-admin{
+  min-width: 80%;
+  margin-bottom: 3%;
+}
+
+h1{
+  margin-top: 2%;
+  margin-left: 10%;
+}

@@ -1,0 +1,16 @@
+.card-cadastro{
+ flex: 1;
+}
+
+.actions-cadastro{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: row;
+}
+
+.buton-salvar{
+  max-width: 25%;
+  margin-right: 20px;
+  width: 350px
+}
