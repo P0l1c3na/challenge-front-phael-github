@@ -11,6 +11,8 @@ import {AuthToken} from "./auth-token";
 })
 export class AuthService {
 
+  private modoSalvandoUser = false;
+
   constructor(private router: Router,
               private httpClient: HttpClient) {
   }
@@ -70,5 +72,13 @@ export class AuthService {
   clearSession() {
     sessionStorage.clear();
   }
+
+ set setModoCriandoUser(valor: boolean){
+    this.modoSalvandoUser = valor;
+ }
+
+ get getModoCriandoUser(){
+    return this.modoSalvandoUser;
+ }
 
 }

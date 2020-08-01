@@ -53,11 +53,13 @@ export class AdicionarUsuarioComponent implements OnInit {
   }
 
   salvar() {
-    const usuario = Usuario.handleUser(this.form.value, {id: 2 , nome: PerfilUsuarioEnum.VISITANTE});
+    const usuario = Usuario.handleUser(this.form.value, {id: 2, nome: PerfilUsuarioEnum.VISITANTE});
+    this.authService.setModoCriandoUser = true;
     this.usuarioService.save(usuario)
       .subscribe((data: any) => {
-        if(data.salvo){
+        if (data.salvo) {
           this.messageService.showMessageSucessfull(data.mensagem);
+          this.authService.setModoCriandoUser = false;
           this.realizarLoginFecharModal(usuario);
         } else {
           this.messageService.showMessageInfo(data.mensagem);

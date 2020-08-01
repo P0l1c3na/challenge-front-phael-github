@@ -61,7 +61,7 @@ export class HttpsRequestInterceptor implements HttpInterceptor {
 
   getHeaders() {
     let headers;
-    if (this.authService.getUserToken() == null) {
+    if (this.authService.getUserToken() == null && !this.authService.getModoCriandoUser) {
       headers = new HttpHeaders({
         'Content-type': 'application/x-www-form-urlencoded; charset=utf-8',
         Authorization: 'Basic ' + btoa(environment.client_id + ':' + environment.client_secret)
